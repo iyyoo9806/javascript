@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>js</title>
+  </head>
+  <body>
+    js
+  </body>
+  <script>
+    let var1 = 1+1, var2, var3;
+    var2 ="string abc";
+    console.log(var1,var2,var3);
+    let human1 = {}, human2 ={}, human3 = {};
+    human1.age = 20;
+    human1.height = "180cm";
+    human1.name = "john";
+    human2.age = 30;
+    human2.height = "160cm";
+    human2.name = "jane";
+    human3.age = 25;
+    human3.height = "170cm";
+    human3.name = "jack;"
+    console.log(human1);
+    console.log(human2);
+    console.log(human3);
+    // 밑에는 잘못된 예시
+    // let car1, car2 ={};
+    // car.color = "red";
+    // car2.color = "green"
+    // console.log(car1,car2);
+// if는 false, undifined, null , 0이 아니면 다됨
+    // if(1+1){
+    //   console.log(1);
+    // }
+    // for문
+    // for(i= 1244; i>-100; i = i-100){
+    //   console.log(i);
+    // }
+    // console.log(50%8);
+    // console.log(1==5);
+    //
+    // if(true&&true){
+    //   console.log("true&&true");
+    // }
+    // if(false&&true){
+    //   console.log("false&&true");
+    // }
+    // if(true&&false){
+    //   console.log("true&&false");
+    // }
+    // if(false&&false){
+    //   console.log("false&&false");
+    // }
+    //
+    // if(true||true){
+    //   console.log("true||true");
+    // }
+    // if(false||true){
+    //   console.log("false||true");
+    // }
+    // if(true||false){
+    //   console.log("true||false");
+    // }
+    // if(false||false){
+    //   console.log("false||false");
+    // }
+    // for(let i=0; i<100; i=i+1){
+    //   if(i%2 != 0){
+    //     console.log(i);
+    //   }
+    // }
+    // for(let i=0; i<50; i=i+1){
+    // //   console.log(2*i+1);
+    // // }
+    // // for(let i=1; i<100; i=i+2){
+    // //   console.log(i);
+    // // }
+    // //
+    // // 1~10 랜덤
+    // // console.log(Math.random()*10);
+    // // // 0~9.99999
+    // // console.log(Math.floor(Math.random()*10)+1);
+    // //1~~10
+    // //1~10 랜덤
+    // console.log("hello");
+    // console.log("random number range is 1 ~ 10");
+    // console.log(Math.floor(Math.random()*10)+1);
+    // console.log("is result");
+    //
+    //
+    // // //11~20 랜덤
+    // // console.log("hello");
+    // // console.log("random number range is 1 ~ 10");
+    // // console.log(Math.floor(Math.random()*10)+1);
+    // // console.log("is result");
+    // //
+    // // //21~30 랜덤
+    // // console.log("hello");
+    // // console.log("random number range is 1 ~ 10");
+    // // console.log(Math.floor(Math.random()*10)+1);
+    // // console.log("is result");
+    // //
+    // // //31~40 랜덤
+    // // console.log("hello");
+    // // console.log("random number range is 1 ~ 10");
+    // // console.log(Math.floor(Math.random()*10)+1);
+    // // console.log("is result");
+    //
+    // function funcName(param1, param2) {
+    //   console.log("hello "+param1 + ","+ param2 + "1");
+    //   console.log("hello "+param1 + ","+ param2 + "2");
+    //   console.log("hello "+param1 + ","+ param2 + "3");
+    //   console.log("hello "+param1 + ","+ param2 + "4");
+    //   console.log("hello "+param1 + ","+ param2 + "5");
+    //   return param1 + param2
+    // }
+    //
+    // // funcName("cat", "dog");
+    // // funcName("banana","apple");
+    // // funcName("기아","현대");
+    //
+    // console.log( funcName("기아","현대") );
+
+    // 1~10 까지의 팩토리얼
+    function fact1(num){
+      let result =1;
+      for(let i=1; i<=num; i++){
+        result = result*i;
+      }
+      console.log(result);
+    }
+
+    for(let i =1; i<=10; i++){
+      fact1(i);
+    }
+
+
+    function fact2(num){
+      let result = 1;
+      for(let i=1; i<=num; i++){
+        result = result*i;
+      }
+      return result;
+    }
+
+    for(let i=1; i<=10; i++){
+      console.log(fact2(i));
+}
+
+  </script>
+</html>

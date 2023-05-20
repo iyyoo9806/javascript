@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title></title>
+  </head>
+  <body>
+    <input type="text" id="price">
+    <input type="button" value=" 구입확인" id="checkbtn">
+
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+
+    $("#checkbtn").click(function(){
+      let price = Number($("#price").val());
+
+      $.ajax({
+        url:`http://localhost/quizNum?price=${price}`,
+        data:{},
+        success:function(data){
+          console.log(data);
+        }
+    });
+  });
+  </script>
+</html>

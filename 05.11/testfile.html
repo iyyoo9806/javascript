@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <body>
+    이름
+    <input type="text" value="" id = "name">
+    <br>
+    생년월일
+    <input type="text" value="" id = "birth">
+    <br>
+    <input type="button" value=" 글쓰기 버튼" id="checkbtn">
+
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+  $("#checkbtn").click(function(){
+    let name = $("#name").val();
+    let birth = $("#birth").val();
+    $.ajax({
+      url:`http://localhost/dbtest?name=${$(`#name`).val()}&birth=${$(`#birth`).val()}`,
+      data:{},
+      success:function(data){
+        console.log(data);
+        $("#checkbtn").html(data);
+      }
+  });
+});
+  </script>
+</html>

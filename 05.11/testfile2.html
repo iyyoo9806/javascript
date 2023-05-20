@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <body>
+    <div id="dbList">
+    </div>
+
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    $.ajax({
+      url:`http://localhost/dbtest2`,
+      data:{},
+      success:function(data){
+        console.log(data);
+        for(let i=0; i<data.length; i++){
+          let row = data[i]
+
+
+          $(`#dbList`).append(`<div id="dbList${row.no}">
+          번호 : ${row.no} / 제목 : ${row.title} / 내용 : ${row.content} <input type="button" value=" 삭제" id="checkbtn${row.no}"></div>
+          `)
+
+            $(`#checkbtn${row.no}`).click(function(){
+              $.ajax({
+                url:`http://localhost/dbtest3?no=${row.no}`,
+                data:{},
+                success:function(data){
+                  console.log(data);
+                }
+            });
+            $(`#dbList${row.no}, #checkbtn${row.no}`).remove();
+        });
+
+      }
+    }
+  });
+
+  </script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title>login</title>
+  </head>
+  <body>
+    <input type="text"  id = "text">
+    <input type="button" value="구구단"  id = "Btn">
+    <div id = "Div"></div>
+    
+  </body>
+  <script>
+    let button = document.getElementById("Btn");
+
+    document.getElementById('Btn').addEventListener('click', function(){
+      let text = Number(document.getElementById("text").value);
+      // text.innerHTML = text
+      document.getElementById("Div").innerHTML = "";
+      for(let i=1; i<=9; i++){
+        document.getElementById("Div").innerHTML += text + '*' + i + '=' + i*text+'<br>';
+        // document.getElementById("Div").innerHTML = document.getElementById("Div").innerHTML + text + '*' + i + '=' + i*text+'<br>';
+      }
+    });
+  </script>
+</html>

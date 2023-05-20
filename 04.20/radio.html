@@ -1,0 +1,77 @@
+<!-- answer -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title></title>
+  </head>
+  <body>
+    1번
+    0 <input type="radio" name="r1">
+    1 <input type="radio" name="r1">
+    2 <input type="radio" name="r1">
+    3 <input type="radio" name="r1">
+    4 <input type="radio" name="r1">
+    가중치<input type="text" id="text1">
+    <br>
+    2번
+    0 <input type="radio" name="r2">
+    1 <input type="radio" name="r2">
+    2 <input type="radio" name="r2">
+    3 <input type="radio" name="r2">
+    4 <input type="radio" name="r2">
+    가중치<input type="text" id="text2">
+    <br>
+    3번
+    0 <input type="radio" name="r3">
+    1 <input type="radio" name="r3">
+    2 <input type="radio" name="r3">
+    3 <input type="radio" name="r3">
+    4 <input type="radio" name="r3">
+    가중치<input type="text" id="text3">
+    <br>
+    <div id = "resultArea"></div>
+    <br>
+
+    <input type="button" value="계산" id="radioCheckBtn">
+
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    // document.getElementById("radioCheckBtn") = $(`#radioCheckBtn`)
+    // document.getElementById("radioCheckBtn").addEventListener('click', function()
+    // = $(`#radioCheckBtn`).click(function()
+    $("#radioCheckBtn").click(function(){
+      // let text1 = document.getElementById("text1").value
+      let text1 = $("#text1").val();
+      let text2 = $("#text2").val();
+      let text3 = $("#text3").val();
+      let r1, r2, r3;
+
+      let radioBtns1 = document.getElementsByName('r1');
+      let radioBtns2 = document.getElementsByName('r2');
+      let radioBtns3 = document.getElementsByName('r3');
+
+        for(let i=0; i<radioBtns1.length; i++){
+          if(radioBtns1[i].checked){
+            r1=i;
+          }
+        }
+
+          for(let i=0; i<radioBtns2.length; i++){
+            if(radioBtns2[i].checked){
+              r2=i;
+            }
+          }
+
+            for(let i=0; i<radioBtns3.length; i++){
+              if(radioBtns3[i].checked){
+                r3=i;
+              }
+            }
+      // document.getElementById("Div").innerHTML =
+      $("#resultArea").html(`${r1} x ${text1} + ${r2} x ${text2}+ ${r3} x ${text3} = ${r1*text1 + r2*text2 + r3*text3}`);
+
+    });
+  </script>
+</html>

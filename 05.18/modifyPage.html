@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>수정</title>
+  </head>
+  <body>
+    제목 : <input type="text" name="" value="" id = "title">
+    <br>
+    내용 : <input type="text" name="" value="" id = "content">
+    <br>
+    <input type="button" name="" value="수정" id="modifyBtn">
+    <input type="button" name="" value="취소" id="cancel">
+    <input type="button" name="" value="뒤로가기" id="back">
+    <div id = "ok">
+    </div>
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+  console.log(location.href.split("?")[1]);
+  no = location.href.split("?")[1]
+  console.log(no);
+
+$(`#modifyBtn`).click(function(){
+  console.log($("#title").val());
+  let title = $("#title").val();
+  let content = $("#content").val();
+  $.ajax({
+    url:`http://localhost/modifyList?no=${no}&title=${$('#title').val()}&content=${$('#content').val()}`,
+    // url:`http://localhost/dbtest?name=${$(`#name`).val()}&birth=${$(`#birth`).val()}`,
+    data:{},
+    success:function(data){
+      console.log(data);
+      $(`#ok`).html("수정완료");
+  }
+  });
+});
+
+  $(`#back`).click(function(){
+    location.href = "http://localhost/test3";
+  });
+
+  $(`#cancel`).click(function(){
+    location.href = "http://localhost/test3";
+  });
+
+
+  </script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title></title>
+  </head>
+  <body>
+    <div id="printInput">
+    <input type="text" id = "box1"><br>
+    </div>
+    <div id="result">
+    </div>
+    <input type="button" id="addInput" value="추가">
+    <input type="button" id="print" value="출력">
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+          let count = 1;
+        $('#addInput').click (function () {
+          for(let i=1; i<count+1; i++){
+              text =  `<input type="text" id = "box${i+1}"><br>`
+          }
+          count++;
+          $('#printInput').append (
+            text
+          );
+        });
+
+        $('#print').click (function () {
+          let total = 0;
+          for(let i=0; i<count; i++){
+            total = total + Number($(`#box${i+1}`).val());
+          }
+          $("#result").html(total);
+        });
+  </script>
+</html>

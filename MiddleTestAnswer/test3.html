@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title></title>
+  </head>
+  <body>
+    키
+    <input type="text" value="" id="height">
+    <br>
+    체중
+    <input type="text" value="" id = "weight">
+    <br>
+    <input type="button" value=" BMI 확인" id="checkbtn">
+    <br>
+    <div id="resultBmi">
+    </div>
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+
+    $("#checkbtn").click(function(){
+      let height = $("#height").val();
+      let weight = $("#weight").val();
+      $.ajax({
+        url:`http://localhost/bmi?height=${$(`#height`).val()}&weight=${$(`#weight`).val()}`,
+        data:{},
+        success:function(data){
+          console.log(data);
+          $("#resultBmi").html(data);
+          //$("#resultBmi").html(`bmi : ${data.bmi}/결과 : ${data.result}`);
+        }
+    });
+  });
+
+  </script>
+</html>

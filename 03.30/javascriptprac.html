@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>inputNum</title>
+  </head>
+  <body>
+    <input type="text" id ="inputNum1">
+    <input type="text" id ="inputNum2">
+    <input type="text" id ="inputNum3">
+    <br>
+    <input type="button" value="결과보기" id="resultBtn">
+  </body>
+  <script>
+    document.getElementById('resultBtn').addEventListener('click', function compare(num){
+
+      let inputNum1 = Number(document.getElementById('inputNum1').value);
+      let inputNum2 = Number(document.getElementById('inputNum2').value);
+      let inputNum3 = Number(document.getElementById('inputNum3').value);
+      if(inputNum1>inputNum2&&inputNum1>inputNum3){
+        console.log(inputNum1);
+      }else if (inputNum2>inputNum1&&inputNum2>inputNum3) {
+        console.log(inputNum2);
+      }else{
+        console.log(inputNum3);
+      }
+
+
+    });
+
+  </script>
+</html>

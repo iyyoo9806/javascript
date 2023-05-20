@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <body>
+    <div id="dbList">
+    </div>
+
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    $.ajax({
+      url:`http://localhost/getList`,
+      data:{},
+      success:function(data){
+        console.log(data);
+        for(let i=0; i<data.length; i++){
+          let row = data[i]
+          $(`#dbList`).append(`<div id="row${row.no}">
+          번호 : ${row.no} / 제목 : ${row.title} / 내용 : ${row.content} <input type="button" value=" 삭제" onclick="deletePost(${row.no})"></div>`)
+      }
+    }
+  });
+
+    function deletePost(no) {
+      $.ajax({
+        url:`http://localhost/deletePost?no=${no}`,
+        data:{},
+        success:function(data){
+          console.log(data);
+          if(data.affectedRows==1){
+            $(`#row${no}`).remove();
+          }
+      }
+      });
+
+    }
+
+
+
+
+  </script>
+</html>

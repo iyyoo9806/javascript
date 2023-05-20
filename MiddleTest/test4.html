@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title></title>
+  </head>
+  <body>
+    국어
+    <input type="text" value="" id="kor">
+    <br>
+    영어
+    <input type="text" value="" id = "eng">
+    <br>
+    수학
+    <input type="text" value="" id = "math">
+    <br>
+
+    <input type="button" value="등수확인" id="checkbtn">
+    <br>
+    <div id="resultRank">
+    </div>
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    let count = 0;
+    $("#checkbtn").click(function(){
+      let kor = $("#kor").val();
+      let eng = $("#eng").val();
+      let math = $("#math").val();
+      $.ajax({
+        url:`http://localhost/testRanking?kor=${$(`#kor`).val()}&eng=${$(`#eng`).val()}&math=${$(`#math`).val()}&count=${count}`,
+        data:{},
+        success:function(data){
+          console.log(data);
+          $("#resultRank").html(data);
+        }
+    });
+    count++;
+  });
+
+  </script>
+</html>

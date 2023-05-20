@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title>arr</title>
+  </head>
+  <body>
+    arr
+  </body>
+  <script>
+    // let arr1 = [], arr2 = [], arr3 = [], arr4 = [];
+    //
+    // for(i=0; i<10; i++){
+    //   arr1[i] = (i+1);
+    // }console.log(arr1);
+    //
+    // for(i=0; i<=10; i++){
+    //   arr2[i] = i*2;
+    // }console.log(arr2);
+    //
+    // for(i=0; i<7; i++){
+    //   arr3[i] = "abc"+(i+1);
+    //   //arr3[i] = `abc&(i+1)`;
+    // }console.log(arr3);
+    //
+    // for(i=0; i<9; i++){
+    //   arr4[i] = (3*i)+1;
+    // }console.log(arr4);
+
+    // let str = "abcdefg"
+    // for(i=0; i<7; i++){
+    //   if(str[i]=="a")
+    //   console.log(str);
+    // }
+
+  //   for(i=0; i<1000; i++){
+  //     threeSixNine = (i+1).toString();
+  //     console.log(threeSixNine);
+  //     for(j=0; j<threeSixNine.length; j++)
+  //     if(threeSixNine[j]=="3"||threeSixNine[j]=="6"||threeSixNine[j]=="9"){
+  //       console.log("짝");
+  //   }
+  // }
+
+  // let num = 1234567123 + ""; //스트링 변환.
+  //   console.log(num.length);
+
+// for(let num=1; num<=1000; num++){
+//   num = num+"";
+//   console.log(num);
+//   for(let i=0; i<num.length; i++){
+//     if(num[i]%3==0 && num[i]!=0){
+//       console.log("짝");
+//       break;
+//     }
+//   }
+// }
+
+//   for(num=1; num<=1000; num++){
+//     num = num+"";
+//     count =0;
+//     for(j=0; j<num.length; j++){
+//     if(num[j]=="3"||num[j]=="6"||num[j]=="9"){
+//         count++
+//   }
+// }
+//   if(count>0){
+//       console.log("짝".repeat(count));
+//   }else{
+//     console.log(num);
+//   }
+// }
+
+// for(num=1; num<=1000; num++){
+//   num = num+"";
+//   str = "";
+//   for(j=0; j<num.length; j++){
+//   if(num[j]=="3"||num[j]=="6"||num[j]=="9"){
+//     str = str +"짝"
+// }
+// }
+// if(str == ""){
+//     console.log(num);
+// }else{
+//   console.log(str);
+// }
+// }
+
+  for(let num=1; num<=1000; num++){
+    num = num+"";
+    let threeSixNine = false;
+    let jjak ="";
+
+  for(let i=0; i<num.length; i++){
+    if([i]%3==0&&num[i]!=0){
+      threeSixNine = true;
+      jjak = jjak +"짝";
+
+    }
+  }
+  if(threeSixNine){
+    console.log(jjak);
+  }
+  else{
+    console.log(num);
+  }
+}
+
+  </script>
+</html>

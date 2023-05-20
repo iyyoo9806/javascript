@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title></title>
+  </head>
+  <body>
+    1번
+    0 <input type="radio" name="r1" value="0">
+    1 <input type="radio" name="r1" value="1">
+    2 <input type="radio" name="r1" value="2">
+    3 <input type="radio" name="r1" value="3">
+    4 <input type="radio" name="r1" value="4">
+    가중치
+    <input type="text" id="text1">
+    <br>
+    2번
+    0 <input type="radio" name="r2" value="0">
+    1 <input type="radio" name="r2" value="1">
+    2 <input type="radio" name="r2" value="2">
+    3 <input type="radio" name="r2" value="3">
+    4 <input type="radio" name="r2" value="4">
+    가중치
+    <input type="text" id="text2">
+    <br>
+    3번
+    0 <input type="radio" name="r3" value="0">
+    1 <input type="radio" name="r3" value="1">
+    2 <input type="radio" name="r3" value="2">
+    3 <input type="radio" name="r3" value="3">
+    4 <input type="radio" name="r3" value="4">
+    가중치
+    <input type="text" id="text3">
+    <br>
+    <div id = "Div"></div>
+    <br>
+
+    <input type="button" value="계산" id="radioCheckBtn">
+
+  </body>
+  <script>
+    let button = document.getElementById("radioCheckBtn");
+    button.addEventListener('click', function(){
+      let text1 = Number(document.getElementById("text1").value);
+      let text2 = Number(document.getElementById("text2").value);
+      let text3 = Number(document.getElementById("text3").value);
+      document.getElementById("Div").innerHTML = "";
+      let a=0;
+      let b=0;
+      let c=0;
+      let radioBtns1 = document.getElementsByName('r1');
+        for(let i=0; i<radioBtns1.length; i++){
+          if(radioBtns1[i].checked){
+            a=i;
+          }
+        }
+        let radioBtns2 = document.getElementsByName('r2');
+          for(let i=0; i<radioBtns2.length; i++){
+            if(radioBtns2[i].checked){
+              b=i;
+            }
+          }
+          let radioBtns3 = document.getElementsByName('r3');
+            for(let i=0; i<radioBtns3.length; i++){
+              if(radioBtns3[i].checked){
+                c=i;
+              }
+            }
+            document.getElementById("Div").innerHTML =  a+"x"+text1 +" + "+ b+"x"+text2 +" + "+ c+"x"+text3  + "=" +  (a*text1 + b*text2 + c*text3);
+    })
+
+  </script>
+</html>
+
+
+<!-- // for(let i=0; i<radioBtns.length; i++){
+//   if(radioBtns[i].checked) {
+//     console.log(`${i+1}번째가 선택되어있음.`);
+//   }
+// } -->

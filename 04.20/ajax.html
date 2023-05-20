@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title></title>
+  </head>
+  <body>
+
+    <input type="button" value="ajax" id="ajaxBtn">
+
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    $("#ajaxBtn").click(function(){
+
+      $.ajax({
+        url:`http://localhost/ajaxTest`,
+        data:{},
+        success:function(data){
+          console.log(data);
+          alert(data);
+        }
+    });
+
+    });
+  </script>
+</html>

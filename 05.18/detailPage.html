@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>상세보기</title>
+  </head>
+  <body>
+    제목 : <span id = "title"></span><br>
+    내용 : <span id = "content"></span>
+    <br>
+    <input type="button" name="" value="뒤로가기" id="back">
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+
+  let no = window.location.search
+  console.log(location.href.split("?")[1]);
+  no = no.replace("?","")
+  console.log(no);
+
+  $.ajax({
+    url:`http://localhost/viewList?no=${no}`,
+    data:{},
+    success:function(data){
+      console.log(data);
+      let row = data[0];
+      $(`#title`).html(row.title);
+      $(`#content`).html(row.content);
+  }
+});
+
+  $(`#back`).click(function(){
+    location.href = "http://localhost/test3";
+  });
+
+
+
+  </script>
+</html>

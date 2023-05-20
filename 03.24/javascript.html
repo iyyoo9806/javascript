@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="text">
+    <br>
+    <input type="text" id="alertText" value=" ">
+    <input type="button" value="버튼" id="alertBtn">
+  </body>
+  <script>
+    console.log(document.getElementById("alertBtn"));
+    document.getElementById("alertBtn").addEventListener('click',function(){
+      alert(document.getElementById("alertText").value);
+    console.log(document.getElementById("alertText").value);
+    });
+
+    for( alert(1); part2(); alert(4)){
+      console.log('3-1');
+      console.log('3-2');
+      console.log('3-3');
+      console.log('3-4');
+    }
+    function part2() {
+      console.log('2-1');
+      console.log('2-2');
+      console.log('2-3');
+      console.log('2-4');
+    }
+
+
+  </script>
+</html>
